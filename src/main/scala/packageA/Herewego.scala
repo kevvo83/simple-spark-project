@@ -26,7 +26,7 @@ object Herewego extends App {
     }
   }
 
-  val hiveWarehouseLocation:String = args(0) + "/spark-warehouse"
+  val hiveWarehouseLocation:String = args(0)
   val sparkMasterURL:String = args(1)
 
   val spark: SparkSession = SparkSession.builder()
@@ -80,7 +80,7 @@ object Herewego extends App {
   val dfSchema: StructType = StructType(schemaFields)
   val data: DataFrame = spark.createDataFrame(rdd3, dfSchema)
 
-  println(data.collect().length)
+  //println(data.collect().length)
 
   data.createTempView("temp_view")
   spark.sql("DROP TABLE IF EXISTS apache_access_info")

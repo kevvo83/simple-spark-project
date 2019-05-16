@@ -1,13 +1,27 @@
 import Dependencies._
+import sys._
 
 name := "simple-spark-project"
 version := "0.1"
-scalaVersion := "2.12.8"
+//scalaVersion := "2.12.8"
+scalaVersion := "2.11.12"
 scalacOptions ++= Seq("-deprecation")
 
 assemblyJarName in assembly := name.value + "-" + version.value + "-assembly.jar"
 
-libraryDependencies ++= clusterLibraryDependencies
+//val libDependencyOpt = Option(System.getProperty("libDependencyOpt")).getOrElse("NONE")
+val libDependencyOpt = "CLIENT"
+
+if (libDependencyOpt == "CLIENT") {
+  println("Client")
+  libraryDependencies ++= localLibraryDependencies
+}
+else {
+  println("Cluster")
+  libraryDependencies ++= clusterLibraryDependencies
+}
+
+
 
 assemblyMergeStrategy in assembly := {
   case PathList("org","aopalliance", xs @ _*) => MergeStrategy.last
