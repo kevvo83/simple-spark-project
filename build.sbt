@@ -1,23 +1,19 @@
 import Dependencies._
-import sys._
 
 name := "simple-spark-project"
-version := "0.1"
-//scalaVersion := "2.12.8"
+version := "0.2"
 scalaVersion := "2.11.12"
 scalacOptions ++= Seq("-deprecation")
 
 assemblyJarName in assembly := name.value + "-" + version.value + "-assembly.jar"
 
 //val libDependencyOpt = Option(System.getProperty("libDependencyOpt")).getOrElse("NONE")
-val libDependencyOpt = "CLIENT"
+val libDependencyOpt = "CLUSTER"
 
 if (libDependencyOpt == "CLIENT") {
-  println("Client")
   libraryDependencies ++= localLibraryDependencies
 }
 else {
-  println("Cluster")
   libraryDependencies ++= clusterLibraryDependencies
 }
 

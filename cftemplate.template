@@ -1,0 +1,776 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Parameters": {
+        "EMREC2KeyPair": {
+            "Description": "Name of the EC2 Key Pair",
+            "Type": "String",
+            "Default": ""
+        }
+    },
+    "Metadata": {
+        "AWS::CloudFormation::Designer": {
+            "24b37c34-1590-4738-9441-df6d401821e8": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 480,
+                    "y": 210
+                },
+                "z": 1,
+                "embeds": []
+            },
+            "f0e850c2-fd47-411a-8a96-58362a483170": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 480,
+                    "y": 90
+                },
+                "z": 1,
+                "embeds": []
+            },
+            "22849cee-65f9-43b2-a70c-213ed4cace50": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 170,
+                    "y": 160
+                },
+                "z": 1,
+                "embeds": []
+            },
+            "44152773-e73d-4b62-ba56-ef423d50ae07": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 320,
+                    "y": 160
+                },
+                "z": 1,
+                "embeds": [],
+                "isassociatedwith": [
+                    "f0e850c2-fd47-411a-8a96-58362a483170",
+                    "22849cee-65f9-43b2-a70c-213ed4cace50"
+                ]
+            },
+            "10505fc7-f36c-4427-83d3-ea88f56da4a3": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 480,
+                    "y": -110
+                },
+                "z": 1,
+                "embeds": [],
+                "isassociatedwith": [
+                    "22849cee-65f9-43b2-a70c-213ed4cace50",
+                    "db488bb7-6805-40f3-9391-5da28b80c8b2"
+                ]
+            },
+            "db488bb7-6805-40f3-9391-5da28b80c8b2": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 480,
+                    "y": -30
+                },
+                "z": 1,
+                "embeds": []
+            },
+            "865309eb-9d40-4cc5-bc1a-f24fa804e81b": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 650,
+                    "y": -110
+                },
+                "z": 1,
+                "embeds": [],
+                "isassociatedwith": [
+                    "22849cee-65f9-43b2-a70c-213ed4cace50",
+                    "db488bb7-6805-40f3-9391-5da28b80c8b2",
+                    "ea03f4d5-c8df-4768-86a7-fc37dbad6d7e"
+                ]
+            },
+            "792d2518-c690-47f3-95e6-fd67e713bcf9": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 650,
+                    "y": 90
+                },
+                "z": 1,
+                "embeds": []
+            },
+            "6060cf3e-21e5-48f1-ab09-0bee27a43f74": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 650,
+                    "y": 210
+                },
+                "z": 1,
+                "embeds": []
+            },
+            "ea03f4d5-c8df-4768-86a7-fc37dbad6d7e": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 650,
+                    "y": -30
+                },
+                "z": 1,
+                "embeds": []
+            },
+            "5978309a-9514-40cf-87c2-599b626322a4": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 170,
+                    "y": 240
+                },
+                "z": 1,
+                "embeds": []
+            },
+            "290b0d5c-1e0f-4301-b67a-bd71e5d94d72": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 320,
+                    "y": 250
+                },
+                "z": 1,
+                "embeds": [],
+                "isassociatedwith": [
+                    "f0e850c2-fd47-411a-8a96-58362a483170",
+                    "22849cee-65f9-43b2-a70c-213ed4cace50",
+                    "792d2518-c690-47f3-95e6-fd67e713bcf9",
+                    "5978309a-9514-40cf-87c2-599b626322a4"
+                ]
+            },
+            "f89e195a-1eca-4271-8cb0-6a9618097656": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 880,
+                    "y": 200
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "e64a67cc-42fc-4fde-a05c-430a2193f720": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1020,
+                    "y": 200
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "5700d621-ffa7-4ef0-84f2-2cc9a3999b77": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1120,
+                    "y": 40
+                },
+                "z": 0,
+                "embeds": [],
+                "dependson": [
+                    "c4d4f3f2-d6dc-435a-8d78-cc5622ca69e0"
+                ]
+            },
+            "5b634ba7-bbd0-499b-9eae-b788e3aa1904": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1290,
+                    "y": -20
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "c4d4f3f2-d6dc-435a-8d78-cc5622ca69e0": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1290,
+                    "y": 200
+                },
+                "z": 0,
+                "embeds": []
+            },
+            "915bc51d-8e94-47d4-9901-0c4e61cca6b1": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 1290,
+                    "y": 100
+                },
+                "z": 0,
+                "embeds": [],
+                "isassociatedwith": [
+                    "c4d4f3f2-d6dc-435a-8d78-cc5622ca69e0"
+                ]
+            },
+            "40fe4fb9-458c-45c9-9e7d-1456b809b8db": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 980,
+                    "y": 40
+                },
+                "z": 0,
+                "embeds": []
+            }
+        }
+    },
+    "Resources": {
+        "DataArchUser": {
+            "Type": "AWS::IAM::User",
+            "Properties": {},
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "f0e850c2-fd47-411a-8a96-58362a483170"
+                }
+            }
+        },
+        "DataArchAccessKeys": {
+            "Type": "AWS::IAM::AccessKey",
+            "Properties": {
+                "UserName": {
+                    "Ref": "DataArchUser"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "24b37c34-1590-4738-9441-df6d401821e8"
+                }
+            }
+        },
+        "DataArchUserGroup": {
+            "Type": "AWS::IAM::Group",
+            "Properties": {
+                "GroupName": "DataArchUserGroup"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "22849cee-65f9-43b2-a70c-213ed4cace50"
+                }
+            }
+        },
+        "AddUsers": {
+            "Type": "AWS::IAM::UserToGroupAddition",
+            "Properties": {
+                "GroupName": {
+                    "Ref": "DataArchUserGroup"
+                },
+                "Users": [
+                    {
+                        "Ref": "DataArchUser"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "44152773-e73d-4b62-ba56-ef423d50ae07"
+                }
+            }
+        },
+        "DataArchS3ROMP": {
+            "Type": "AWS::IAM::ManagedPolicy",
+            "Properties": {
+                "ManagedPolicyName": "DataArchS3ROMP",
+                "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Action": [
+                                "s3:GetBucketPolicy",
+                                "s3:GetBucketPolicyStatus",
+                                "s3:GetBucketPublicAccessBlock",
+                                "s3:GetBucketVersioning",
+                                "s3:GetBucketWebsite",
+                                "s3:GetLifecycleConfiguration",
+                                "s3:GetObject",
+                                "s3:GetObjectAcl",
+                                "s3:GetObjectTagging",
+                                "s3:GetObjectVersion",
+                                "s3:GetObjectVersionAcl",
+                                "s3:ListBucket",
+                                "s3:ListBucketByTags",
+                                "s3:ListBucketMultipartUploads",
+                                "s3:ListBucketVersions",
+                                "s3:ListMultipartUploadParts"
+                            ],
+                            "Effect": "Allow",
+                            "Resource": "*"
+                        }
+                    ]
+                },
+                "Roles": [
+                    {
+                        "Ref": "DataArchS3RORole"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "10505fc7-f36c-4427-83d3-ea88f56da4a3"
+                }
+            }
+        },
+        "DataArchS3RORole": {
+            "Type": "AWS::IAM::Role",
+            "Properties": {
+                "AssumeRolePolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Principal": {
+                                "AWS": [
+                                    {
+                                        "Fn::GetAtt": [
+                                            "DataArchUser",
+                                            "Arn"
+                                        ]
+                                    },
+                                    {
+                                        "Fn::GetAtt": [
+                                            "DataArchAdmin",
+                                            "Arn"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "Action": [
+                                "sts:AssumeRole"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "db488bb7-6805-40f3-9391-5da28b80c8b2"
+                }
+            }
+        },
+        "DataArchS3RWMP": {
+            "Type": "AWS::IAM::ManagedPolicy",
+            "Properties": {
+                "ManagedPolicyName": "DataArchS3RWMP",
+                "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Action": [
+                                "s3:HeadBucket",
+                                "s3:ListAllMyBuckets",
+                                "s3:ListBucket",
+                                "s3:ListBucketByTags",
+                                "s3:ListBucketMultipartUploads",
+                                "s3:ListBucketVersions",
+                                "s3:ListMultipartUploadParts",
+                                "s3:PutObject",
+                                "s3:PutObjectAcl",
+                                "s3:PutObjectTagging",
+                                "s3:PutObjectVersionAcl",
+                                "s3:PutObjectVersionTagging",
+                                "s3:PutReplicationConfiguration"
+                            ],
+                            "Effect": "Allow",
+                            "Resource": "*"
+                        }
+                    ]
+                },
+                "Roles": [
+                    {
+                        "Ref": "DataArchS3RWRole"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "865309eb-9d40-4cc5-bc1a-f24fa804e81b"
+                }
+            }
+        },
+        "DataArchAdmin": {
+            "Type": "AWS::IAM::User",
+            "Properties": {},
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "792d2518-c690-47f3-95e6-fd67e713bcf9"
+                }
+            }
+        },
+        "DataArchAdminAccessKeys": {
+            "Type": "AWS::IAM::AccessKey",
+            "Properties": {
+                "UserName": {
+                    "Ref": "DataArchAdmin"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "6060cf3e-21e5-48f1-ab09-0bee27a43f74"
+                }
+            }
+        },
+        "DataArchS3RWRole": {
+            "Type": "AWS::IAM::Role",
+            "Properties": {
+                "AssumeRolePolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Principal": {
+                                "AWS": [
+                                    {
+                                        "Fn::GetAtt": [
+                                            "DataArchAdmin",
+                                            "Arn"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "Action": [
+                                "sts:AssumeRole"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "ea03f4d5-c8df-4768-86a7-fc37dbad6d7e"
+                }
+            }
+        },
+        "DataArchAdminGroup": {
+            "Type": "AWS::IAM::Group",
+            "Properties": {
+                "GroupName": "DataArchAdminGroup"
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "5978309a-9514-40cf-87c2-599b626322a4"
+                }
+            }
+        },
+        "IAMUTGAK5C8": {
+            "Type": "AWS::IAM::UserToGroupAddition",
+            "Properties": {
+                "Users": [
+                    {
+                        "Ref": "DataArchAdmin"
+                    }
+                ],
+                "GroupName": {
+                    "Ref": "DataArchAdminGroup"
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "290b0d5c-1e0f-4301-b67a-bd71e5d94d72"
+                }
+            }
+        },
+        "simplesparkprojdeps1": {
+            "Type": "AWS::S3::Bucket",
+            "Properties": {
+                "BucketName": {
+                    "Fn::Join": [
+                        "-",
+                        [
+                            "simplesparkprojdeps1",
+                            {
+                                "Ref": "AWS::AccountId"
+                            }
+                        ]
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "f89e195a-1eca-4271-8cb0-6a9618097656"
+                }
+            }
+        },
+        "simplesparkprojectartifacts": {
+            "Type": "AWS::S3::Bucket",
+            "Properties": {
+                "BucketName": {
+                    "Fn::Join": [
+                        "-",
+                        [
+                            "simplesparkprojectartifacts",
+                            {
+                                "Ref": "AWS::AccountId"
+                            }
+                        ]
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "e64a67cc-42fc-4fde-a05c-430a2193f720"
+                }
+            }
+        },
+        "EMRC4HVX5": {
+            "Type": "AWS::EMR::Cluster",
+            "Properties": {
+                "Name": {
+                    "Fn::Join": [
+                        "-",
+                        [
+                            "emr-spark-cluster-cf",
+                            {
+                                "Ref": "AWS::AccountId"
+                            }
+                        ]
+                    ]
+                },
+                "ReleaseLabel": "emr-5.14.0",
+                "Applications": [
+                    {
+                        "Name": "Spark"
+                    },
+                    {
+                        "Name": "Ganglia"
+                    },
+                    {
+                        "Name": "Hadoop"
+                    },
+                    {
+                        "Name": "Zeppelin"
+                    },
+                    {
+                        "Name": "Hue"
+                    },
+                    {
+                        "Name": "Hive"
+                    },
+                    {
+                        "Name": "Livy"
+                    }
+                ],
+                "VisibleToAllUsers": true,
+                "LogUri": {
+                    "Fn::Join": [
+                        "",
+                        [
+                            "s3://",
+                            "emrlogbucket-",
+                            {
+                                "Ref": "AWS::AccountId"
+                            }
+                        ]
+                    ]
+                },
+                "JobFlowRole": {
+                    "Ref": "EMREC2InstanceProfile"
+                },
+                "ServiceRole": {
+                    "Ref": "EMRClusterRole"
+                },
+                "Instances": {
+                    "Ec2KeyName": {
+                        "Ref": "EMREC2KeyPair"
+                    },
+                    "MasterInstanceGroup": {
+                        "InstanceCount": 1,
+                        "InstanceType": "m4.large",
+                        "Market": "ON_DEMAND",
+                        "Name": "Master"
+                    },
+                    "CoreInstanceGroup": {
+                        "InstanceCount": 2,
+                        "InstanceType": "m4.large",
+                        "Market": "ON_DEMAND",
+                        "Name": "Master"
+                    },
+                    "TerminationProtected": false
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "5700d621-ffa7-4ef0-84f2-2cc9a3999b77"
+                }
+            },
+            "DependsOn": [
+                "EMRClusterRole",
+                "EMREC2Role",
+                "EMREC2InstanceProfile"
+            ]
+        },
+        "EMRClusterRole": {
+            "Type": "AWS::IAM::Role",
+            "Properties": {
+                "RoleName": "EMRClusterRole",
+                "ManagedPolicyArns": [
+                    "arn:aws:iam::aws:policy/AmazonElasticMapReduceFullAccess"
+                ],
+                "AssumeRolePolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Principal": {
+                                "Service": [
+                                    "elasticmapreduce.amazonaws.com"
+                                ]
+                            },
+                            "Action": [
+                                "sts:AssumeRole"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "5b634ba7-bbd0-499b-9eae-b788e3aa1904"
+                }
+            }
+        },
+        "EMREC2Role": {
+            "Type": "AWS::IAM::Role",
+            "Properties": {
+                "RoleName": "EMREC2Role",
+                "ManagedPolicyArns": [
+                    "arn:aws:iam::aws:policy/service-role/AmazonElasticMapReduceforEC2Role"
+                ],
+                "AssumeRolePolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Principal": {
+                                "Service": [
+                                    "elasticmapreduce.amazonaws.com"
+                                ]
+                            },
+                            "Action": [
+                                "sts:AssumeRole"
+                            ]
+                        }
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "c4d4f3f2-d6dc-435a-8d78-cc5622ca69e0"
+                }
+            }
+        },
+        "EMREC2InstanceProfile": {
+            "Type": "AWS::IAM::InstanceProfile",
+            "Properties": {
+                "InstanceProfileName": "EMREC2InstanceProfile",
+                "Roles": [
+                    {
+                        "Ref": "EMREC2Role"
+                    }
+                ]
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "915bc51d-8e94-47d4-9901-0c4e61cca6b1"
+                }
+            }
+        },
+        "EMRLogBucket": {
+            "Type": "AWS::S3::Bucket",
+            "Properties": {
+                "BucketName": {
+                    "Fn::Join": [
+                        "-",
+                        [
+                            "emrlogbucket",
+                            {
+                                "Ref": "AWS::AccountId"
+                            }
+                        ]
+                    ]
+                }
+            },
+            "Metadata": {
+                "AWS::CloudFormation::Designer": {
+                    "id": "40fe4fb9-458c-45c9-9e7d-1456b809b8db"
+                }
+            }
+        }
+    },
+    "Outputs": {
+        "DataArchUserAccessKeyId": {
+            "Value": {
+                "Ref": "DataArchAccessKeys"
+            }
+        },
+        "DataArchUserSecretKey": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "DataArchAccessKeys",
+                    "SecretAccessKey"
+                ]
+            }
+        },
+        "DataArchAdminAccessKeyId": {
+            "Value": {
+                "Ref": "DataArchAdminAccessKeys"
+            }
+        },
+        "DataArchAdminSecretKey": {
+            "Value": {
+                "Fn::GetAtt": [
+                    "DataArchAdminAccessKeys",
+                    "SecretAccessKey"
+                ]
+            }
+        }
+    }
+}

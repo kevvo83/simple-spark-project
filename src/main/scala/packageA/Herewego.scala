@@ -78,7 +78,7 @@ object Herewego extends App {
   )
 
   val dfSchema: StructType = StructType(schemaFields)
-  val data: DataFrame = spark.createDataFrame(rdd3, dfSchema)
+  val data: DataFrame = spark.createDataFrame(rdd3, dfSchema).cache()
 
   //println(data.collect().length)
 
