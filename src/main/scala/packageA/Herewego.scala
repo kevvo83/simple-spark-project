@@ -26,8 +26,9 @@ object Herewego extends App {
     }
   }
 
-  val hiveWarehouseLocation:String = args(0)
-  val sparkMasterURL:String = args(1)
+  val inputFileLocation:String = args(0)
+  val hiveWarehouseLocation:String = args(1)
+  val sparkMasterURL:String = args(2)
 
   val spark: SparkSession = SparkSession.builder()
     .appName("revise-sparkapp")
@@ -36,8 +37,19 @@ object Herewego extends App {
     .enableHiveSupport()
     .getOrCreate()
 
-  val rdd1 = spark.sparkContext.textFile(getResFullPath("/apache_log.txt").getOrElse(""),
-    4)
+  val hadoopConf = spark.sparkContext.hadoopConfiguration
+
+  println(s"${Option(System.getenv("s3a_access_key")).getOrElse("NA")} and ${Option(System.getenv("s3a_secret_key")).getOrElse("NA")}")
+
+  if ((Option(System.getenv("s3a_access_key")).getOrElse("NA") != "NA") &&
+      (Option(System.getenv("s3a_secret_key")).getOrElse("NA") != "NA"))
+  {
+    hadoopConf.set("fs.s3a.aws.credentials.provider", "org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider")
+    hadoopConf.set("fs.s3a.access.key", s"${System.getenv("s3a_access_key")}")
+    hadoopConf.set("fs.s3a.secret.key", s"${System.getenv("s3a_secret_key")}")
+  }
+
+  val rdd1 = spark.sparkContext.textFile(s"${inputFileLocation}", 4)
 
   val rx: Regex = """^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) \- \- \[(\d{2}\/\w+\/\d{4})\:(\d{2}\:\d{2}\:\d{2} \+\d{4}).*""".r
 

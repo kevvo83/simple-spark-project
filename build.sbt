@@ -7,13 +7,14 @@ scalacOptions ++= Seq("-deprecation")
 
 assemblyJarName in assembly := name.value + "-" + version.value + "-assembly.jar"
 
-//val libDependencyOpt = Option(System.getProperty("libDependencyOpt")).getOrElse("NONE")
-val libDependencyOpt = "CLUSTER"
+val libDependencyOpt = Option(System.getProperty("libDependencyOpt")).getOrElse("NONE")
 
 if (libDependencyOpt == "CLIENT") {
+  println(libDependencyOpt)
   libraryDependencies ++= localLibraryDependencies
 }
 else {
+  println(libDependencyOpt)
   libraryDependencies ++= clusterLibraryDependencies
 }
 
